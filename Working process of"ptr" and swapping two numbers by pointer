@@ -1,0 +1,135 @@
+1.  
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u", *ptr++);
+return ();
+}
+Output:-
+10
+
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u",( *ptr)+++);
+return ();
+}
+This program is wrong because there is 3 increments and odd number of increment is not possible so the program will give an error.
+
+
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u", (*ptr)++);
+return ();
+}
+Output:-
+10
+
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u", ++(*ptr));
+return ();
+}
+Output:-
+11
+
+
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u", +++++(*ptr));
+return ();
+}
+This program is wrong because there is 5 increments and odd number of increment is not possible so the program will give an error.
+
+#include<studio.h>
+#include<conio.h>
+int main();
+{
+int i=10;
+ptr=&i;
+printf ("%u",--*ptr);
+return ();
+}
+Output:-
+9
+
+
+
+
+2. Write a C program to swap 2 numbers using pointers to illustrate the difference between pass by value and pass by reference.
+Pass by value:-
+Program:-
+include <stdio.h>
+#include<conio.h>
+void swap(int *x,int *y)
+{
+    int t;
+     t   = *x;
+    *x   = *y;
+    *y   =  t;
+}
+int main()
+{
+    int num1,num2;
+printf("Enter value of num1: ");
+    scanf("%d",&num1);
+    printf("Enter value of num2: ");
+    scanf("%d",&num2);
+printf("Before Swapping: num1 is: %d, num2 is: %d\n",num1,num2);
+swap(&num1,&num2);
+  printf("After  Swapping: num1 is: %d, num2 is: %d\n",num1,num2);
+ return 0;
+}
+
+Output:-
+Enter the value of num1: 100
+Enter the value of num2: 200
+Before Swapping: num1 is: 100, num2 is: 200
+After Swapping: num1 is: 200, num1 is:  100
+Pass by reference:-
+Program:-
+include <stdio.h>
+#include<conio.h>
+void swapnum(int *num1, int *num2)
+{
+   int tempnum;
+tempnum = *num1;
+   *num1 = *num2;
+   *num2 = tempnum;
+}
+int main( )
+{
+   int v1 = 11, v2 = 77 ;
+   printf("Before swapping:");
+   printf("\nValue of v1 is: %d", v1);
+   printf("\nValue of v2 is: %d", v2);
+swapnum( &v1, &v2 );
+printf("\nAfter swapping:");
+   printf("\nValue of v1 is: %d", v1);
+   printf("\nValue of v2 is: %d", v2);
+}
+Output:-
+Before swapping:
+Value of v1 is: 11
+Value of v2 is: 77
+After swapping:
+Value of v1 is: 77
+Value of v2 is: 11
